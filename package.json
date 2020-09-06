@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "dev": "npx snowpack dev",
+    "build": "npx snowpack build"
+  },
+  "dependencies": {
+    "dayjs": "^1.8.34",
+    "imba": "^2.0.0-alpha.94"
+  },
+  "devDependencies": {
+    "imba-snowpack": "^0.0.8"
+  },
+  "snowpack": {
+    "mount": {"src": "/static","static": "/"},
+    "plugins": [["imba-snowpack",{"entrypoints": ["app-root"]}]],
+    "install": ["dayjs"],
+    "installOptions": {},
+    "devOptions": {"out": "public","open": "none"},
+    "buildOptions": {}
+  }
+}
