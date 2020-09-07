@@ -22,7 +22,6 @@ export default tag Geo
 		geo.getCurrentPosition(initPosition.bind(this))
 		geo.watchPosition(setPosition.bind(this), onError.bind(this), options)
 
-
 	def onError err
 		console.warn err
 

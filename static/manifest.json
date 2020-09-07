@@ -1,6 +1,6 @@
 {
- "name": "Avi",
- "short_name": "Avi",
+ "name": "PWA",
+ "short_name": "PWA",
  "icons": [
     {
         "src": "/img/icon/android-chrome-192x192.png",
@@ -19,6 +19,5 @@
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#000000",
-  "background_color": "#000000",
-  "permissions":      ["geolocation"]
+  "background_color": "#000000"
 }

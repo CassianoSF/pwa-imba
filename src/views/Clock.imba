@@ -13,5 +13,5 @@ css .clock
 	margin: auto
 	ai: center
 	jc: center
-	fs: 50px
+	fs: 90px
 	ff: sans
