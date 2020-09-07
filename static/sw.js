@@ -1,33 +1,37 @@
-var t = "avi",
-    i = [];
+var app = "awesome-pwa",
+    cached = [
+    ];
+
 "serviceWorker" in navigator &&
     navigator.serviceWorker
         .register("sw.js")
-        .then(function () {
+        .then( () => {
             console.log("sw: registration ok");
         })
-        .catch(function (e) {
-            console.error(e);
+        .catch( (err) => {
+            console.error(err);
         });
-self.addEventListener("install", function (e) {
+
+self.addEventListener("install",  (e) => {
     e.waitUntil(
-        caches.open(t).then(function (n) {
-            return console.log("sw: writing files into cache"), n.addAll(i);
+        caches.open(app).then( (file) => {
+            return console.log("sw: writing files into cache"), file.addAll(cached);
         })
     );
 });
-self.addEventListener("activate", function (e) {
+
+self.addEventListener("activate",  (e) => {
     console.log("sw: service worker ready and activated", e);
 });
-self.addEventListener("fetch", function (e) {
+
+self.addEventListener("fetch",  (e) => {
     e.respondWith(
-        caches
-            .match(e.request)
-            .then(function (n) {
-                return n || fetch(e.request);
+        caches.match(e.request)
+            .then( cached_response => {
+                return cached_response || fetch(e.request);
             })
-            .catch(function (n) {
-                return caches.match("img/offline-img.png");
+            .catch( err => {
+                console.error(err)
             })
     );
 });
