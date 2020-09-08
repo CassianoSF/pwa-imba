@@ -14,8 +14,7 @@ export default tag Bluetooth
 				height: 
 					min: 300
 				facingMode:  
-					exact: "user" 
-					# exact: "environment" 
+					exact: "environment" 
 
 		stream = await window.navigator.mediaDevices.getUserMedia(options)
 		$video.srcObject = stream

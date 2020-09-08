@@ -10,7 +10,8 @@
     "mapbox-gl": "^1.12.0"
   },
   "devDependencies": {
-    "imba-snowpack": "^0.0.8"
+    "imba-snowpack": "^0.0.8",
+    "snowpack": "2.9.0"
   },
   "snowpack": {
     "mount": {
