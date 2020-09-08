@@ -1,7 +1,0 @@
-{
-  "imports": {
-    "dayjs": "./dayjs.js",
-    "imba/dist/imba.js": "./imba/dist/imba.js",
-    "mapbox-gl": "./mapbox-gl.js"
-  }
-}

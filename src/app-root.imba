@@ -7,30 +7,11 @@ import Bluetooth from './views/Bluetooth'
 Router.new.go('/clock')
 
 tag App
-	def mount
-		install_prompt = false
-		render()
-		window.onbeforeinstallprompt = do |e|
-			console.log e
-			e.preventDefault()
-			install_prompt = true
-			render()
-			deferred_prompt = e
-
-	def install
-		deferred_prompt.prompt()
-		choiceResult = await deferred_prompt.userChoice
-		if (choiceResult.outcome === 'accepted')
-			install_prompt = false
-			render()
-
 	def render
 		<self>
 			<.header>
 				window.location.pathname.slice(1)
 			<.content>
-				<.container>
-					<button :gotpointercapture.install [h: 8vh m: auto w: 50vw fs: lg]> "Instalar"
 				<Clock route.exact='/clock'>
 				<Geo route.exact='/geo'>
 				<Bluetooth route.exact='/bluetooth'>
@@ -69,11 +50,6 @@ tag App
 		margin: auto 
 		ff: sans
 		fs: xxs
-
-	css .container
-		d: flex
-		rd: md
-		ta: center
 
 global css body
 	m: 0
