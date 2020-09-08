@@ -1,6 +1,0 @@
-{
-  "imports": {
-    "dayjs": "./dayjs.js",
-    "mapbox-gl": "./mapbox-gl.js"
-  }
-}
